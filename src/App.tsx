@@ -1,13 +1,12 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { ProjectList } from "./screens/project-list/index.jsx";
 
 function App() {
   return (
     <div className="App">
-      <a className="link" title="链接" href="https://www.baidu.com">
-        百度
-      </a>
+      <ProjectList />
     </div>
   );
 }
