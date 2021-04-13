@@ -33,19 +33,34 @@ const debounce = (fn, delay) => {
 export const useDebounce = (param, delay) => {
   const [debounceParam, setDebounceParam] = useState(param);
 
-  const debounceSetBounceParam = useCallback(
-    debounce((newParam) => {
-      setDebounceParam(newParam);
-    }, delay),
-    [delay]
-  );
-
   useEffect(() => {
-    debounceSetBounceParam(param);
-  }, [debounceSetBounceParam, param]);
+    const timer = setTimeout(() => {
+      setDebounceParam(param);
+    }, delay);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [param, delay]);
 
   return debounceParam;
 };
+
+// export const useDebounce = (param, delay) => {
+//   const [debounceParam, setDebounceParam] = useState(param);
+
+//   const debounceSetBounceParam = useCallback(
+//     debounce((newParam) => {
+//       setDebounceParam(newParam);
+//     }, delay),
+//     [delay]
+//   );
+
+//   useEffect(() => {
+//     debounceSetBounceParam(param);
+//   }, [debounceSetBounceParam, param]);
+
+//   return debounceParam;
+// };
 
 // let timer = null
 // export const useDebounce = (param, delay) => {
