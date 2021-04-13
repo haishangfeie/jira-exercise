@@ -1,49 +1,49 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react'
 
 export const isTurthy = (val) => {
-  return val === 0 || !!val;
-};
+  return val === 0 || !!val
+}
 export const cleanObject = (obj) => {
-  const newObj = { ...obj };
+  const newObj = { ...obj }
   Object.keys(newObj).forEach((key) => {
     if (!isTurthy(newObj[key])) {
-      delete newObj[key];
+      delete newObj[key]
     }
-  });
-  return newObj;
-};
+  })
+  return newObj
+}
 
 export const useMount = (callback) => {
-  useEffect(callback, []);
-};
+  useEffect(callback, [])
+}
 
 const debounce = (fn, delay) => {
-  let timer = null;
+  let timer = null
   return (...args) => {
     if (timer) {
-      clearTimeout(timer);
+      clearTimeout(timer)
     }
     timer = setTimeout(() => {
-      fn(...args);
-      timer = null;
-    }, delay);
-  };
-};
+      fn(...args)
+      timer = null
+    }, delay)
+  }
+}
 
 export const useDebounce = (param, delay) => {
-  const [debounceParam, setDebounceParam] = useState(param);
+  const [debounceParam, setDebounceParam] = useState(param)
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setDebounceParam(param);
-    }, delay);
+      setDebounceParam(param)
+    }, delay)
     return () => {
-      clearTimeout(timer);
-    };
-  }, [param, delay]);
+      clearTimeout(timer)
+    }
+  }, [param, delay])
 
-  return debounceParam;
-};
+  return debounceParam
+}
 
 // export const useDebounce = (param, delay) => {
 //   const [debounceParam, setDebounceParam] = useState(param);

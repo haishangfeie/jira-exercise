@@ -1,14 +1,14 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { ProjectList } from "./screens/project-list/index.jsx";
+import React from 'react'
+import logo from './logo.svg'
+import './App.css'
+import { ProjectList } from './screens/project-list/index.jsx'
 
 function App() {
   return (
     <div className="App">
       <ProjectList />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
