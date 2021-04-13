@@ -1,9 +1,13 @@
 import { useCallback, useEffect, useState } from 'react'
 
-export const isTurthy = (val) => {
+export const isTurthy = (val: any) => {
   return val === 0 || !!val
 }
-export const cleanObject = (obj) => {
+
+type TObj = {
+  [key: string]: any
+}
+export const cleanObject = (obj: TObj) => {
   const newObj = { ...obj }
   Object.keys(newObj).forEach((key) => {
     if (!isTurthy(newObj[key])) {
@@ -13,24 +17,24 @@ export const cleanObject = (obj) => {
   return newObj
 }
 
-export const useMount = (callback) => {
+export const useMount = (callback: () => void) => {
   useEffect(callback, [])
 }
 
-const debounce = (fn, delay) => {
-  let timer = null
-  return (...args) => {
-    if (timer) {
-      clearTimeout(timer)
-    }
-    timer = setTimeout(() => {
-      fn(...args)
-      timer = null
-    }, delay)
-  }
-}
+// const debounce = (fn, delay) => {
+//   let timer = null
+//   return (...args) => {
+//     if (timer) {
+//       clearTimeout(timer)
+//     }
+//     timer = setTimeout(() => {
+//       fn(...args)
+//       timer = null
+//     }, delay)
+//   }
+// }
 
-export const useDebounce = (param, delay) => {
+export const useDebounce = (param: any, delay: number) => {
   const [debounceParam, setDebounceParam] = useState(param)
 
   useEffect(() => {

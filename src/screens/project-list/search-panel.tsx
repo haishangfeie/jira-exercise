@@ -1,6 +1,16 @@
 import React, { useState } from 'react'
+import { IUser } from './list'
 
-export const SearchPanel = ({ users, param, setParam }) => {
+interface ISearchPanelProp {
+  users: IUser[]
+  param: {
+    name: string
+    personId: string
+  }
+  setParam: (prop: ISearchPanelProp['param']) => void
+}
+
+export const SearchPanel = ({ users, param, setParam }: ISearchPanelProp) => {
   return (
     <form>
       <div>
@@ -10,7 +20,7 @@ export const SearchPanel = ({ users, param, setParam }) => {
           onInput={(e) => {
             setParam({
               ...param,
-              name: e.target.value,
+              name: (e.target as HTMLButtonElement).value,
             })
           }}
         />

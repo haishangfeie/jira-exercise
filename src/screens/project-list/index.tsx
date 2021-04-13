@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { List } from './list.jsx'
-import { SearchPanel } from './search-panel.jsx'
+import { List } from './list'
+import { SearchPanel } from './search-panel'
 import { cleanObject, useMount, useDebounce } from 'utils/index'
 import qs from 'qs'
 
