@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 
-export const isTurthy = (val: any) => {
+export const isTurthy = (val: unknown) => {
   return val === 0 || !!val
 }
 
@@ -34,7 +34,7 @@ export const useMount = (callback: () => void) => {
 //   }
 // }
 
-export const useDebounce = (param: any, delay: number) => {
+export const useDebounce = (param: unknown, delay: number) => {
   const [debounceParam, setDebounceParam] = useState(param)
 
   useEffect(() => {
