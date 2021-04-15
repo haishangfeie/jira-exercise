@@ -98,6 +98,7 @@ export const useArray = <P>(param: P[]) => {
   }
   return {
     value,
+    setValue,
     removeIndex,
     clear,
     add,
