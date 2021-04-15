@@ -82,8 +82,8 @@ export const useDebounce = <V>(param: V, delay: number) => {
 //   return debounceParam
 // }
 
-export const useArray = <P>(param: P[]) => {
-  const [value, setValue] = useState(param)
+export const useArray = <T>(initialArray: T[]) => {
+  const [value, setValue] = useState(initialArray)
 
   const removeIndex = (index: number) => {
     const newVal = [...value]
@@ -93,7 +93,7 @@ export const useArray = <P>(param: P[]) => {
   const clear = () => {
     setValue([])
   }
-  const add = (item: P) => {
+  const add = (item: T) => {
     setValue([...value, item])
   }
   return {
