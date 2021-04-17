@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import { IUser } from './list'
 
 interface ISearchPanelProp {
@@ -20,7 +20,7 @@ export const SearchPanel = ({ users, param, setParam }: ISearchPanelProp) => {
           onInput={(e) => {
             setParam({
               ...param,
-              name: (e.target as HTMLButtonElement).value,
+              name: (e.target as HTMLInputElement).value,
             })
           }}
         />
