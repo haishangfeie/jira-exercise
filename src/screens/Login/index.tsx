@@ -5,10 +5,9 @@ const apiUrl = process.env.REACT_APP_API_URL
 const LoginScreen = () => {
   const onsubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const name = (e.currentTarget.elements[0] as HTMLInputElement).value
+    const username = (e.currentTarget.elements[0] as HTMLInputElement).value
     const password = (e.currentTarget.elements[1] as HTMLInputElement).value
-    console.log(name, password)
-    if (!name || !password) {
+    if (!username || !password) {
       return
     }
     fetch(`${apiUrl}/login`, {
@@ -17,7 +16,7 @@ const LoginScreen = () => {
         'content-type': 'application/json',
       },
       body: JSON.stringify({
-        name,
+        username,
         password,
       }),
     })
@@ -35,8 +34,8 @@ const LoginScreen = () => {
   return (
     <form onSubmit={onsubmit}>
       <div>
-        <label htmlFor="name">用户名</label>
-        <input type="text" id="name" />
+        <label htmlFor="username">用户名</label>
+        <input type="text" id="username" />
       </div>
       <div>
         <label htmlFor="password">密码</label>
