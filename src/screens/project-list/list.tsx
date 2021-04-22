@@ -11,6 +11,7 @@ interface IProject {
 export interface IUser {
   id: number
   name: string
+  token: string
 }
 
 interface IListProps {
