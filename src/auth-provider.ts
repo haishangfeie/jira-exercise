@@ -28,7 +28,7 @@ export const login = ({
     }),
   }).then(async (res) => {
     if (res.ok) {
-      setToken(await res.json())
+      return setToken(await res.json())
     } else {
       return Promise.reject(new Error('登录失败'))
     }
@@ -53,13 +53,13 @@ export const register = ({
     }),
   }).then(async (res) => {
     if (res.ok) {
-      setToken(await res.json())
+      return setToken(await res.json())
     } else {
       return Promise.reject(new Error('注册失败'))
     }
   })
 }
 
-export const logout = () => {
+export const logout = async () => {
   window.localStorage.removeItem(localStorageTokenKey)
 }
