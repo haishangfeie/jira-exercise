@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const isTurthy = (val: unknown) => {
   return val === 0 || !!val

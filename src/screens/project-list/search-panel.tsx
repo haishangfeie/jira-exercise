@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react'
+import React from 'react'
 import { IUser } from './list'
 
 interface ISearchPanelProp {
