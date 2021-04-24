@@ -1,15 +1,14 @@
 import React from 'react'
 import './App.css'
-// import { ProjectList } from './screens/project-list/index'
-// import TestUseArray from './screens/test-react/test-use-array'
-import Login from './screens/Login/index'
+import AuthenticatedScreen from './authenticated-app'
+import UnauthenticatedScreen from './unauthenticated-app/index'
+import { useAuth } from 'context/auth-context'
 
 function App() {
+  const { user } = useAuth()
   return (
     <div className="App">
-      <Login />
-      {/* <TestUseArray /> */}
-      {/* <ProjectList /> */}
+      {user ? <AuthenticatedScreen /> : <UnauthenticatedScreen />}
     </div>
   )
 }
