@@ -18,6 +18,9 @@ const RegisterScreen = () => {
       .then(() => {
         console.log('注册成功')
       })
+      .catch(() => {
+        console.log('注册失败')
+      })
   }
   return (
     <form onSubmit={onsubmit}>

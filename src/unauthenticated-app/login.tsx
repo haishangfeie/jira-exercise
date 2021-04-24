@@ -18,6 +18,9 @@ const LoginScreen = () => {
       .then(() => {
         console.log('登录成功')
       })
+      .catch(() => {
+        console.log('登录失败')
+      })
   }
   return (
     <form onSubmit={onsubmit}>
