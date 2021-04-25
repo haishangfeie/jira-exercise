@@ -40,7 +40,6 @@ export const SearchPanel = ({ users, param, setParam }: ISearchPanelProp) => {
             </option>
           ))}
         </select>
-        <button>搜索</button>
       </div>
     </form>
   )

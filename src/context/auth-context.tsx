@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import * as auth from 'auth-provider'
 import { IUser } from 'screens/project-list/list'
+import { useMount } from 'utils'
+import http from 'utils/http'
 
 interface IAuthForm {
   username: string
@@ -9,6 +11,7 @@ interface IAuthForm {
 
 interface IAuthCnotext {
   user: IUser | null
+  setUser: (user: IUser | null) => void
   login: (authForm: IAuthForm) => Promise<void>
   register: (authForm: IAuthForm) => Promise<void>
   logout: () => Promise<void>
@@ -29,8 +32,21 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     return auth.logout().then(() => setUser(null))
   }
 
+  useMount(() => {
+    const token = auth.getToken()
+    if (token) {
+      http('me', {
+        token,
+      })
+        .then((data) => setUser(data?.user))
+        .catch((err) => {
+          console.log(err)
+        })
+    }
+  })
+
   return (
-    <AuthContext.Provider value={{ user, login, register, logout }}>
+    <AuthContext.Provider value={{ user, login, register, logout, setUser }}>
       {children}
     </AuthContext.Provider>
   )
