@@ -27,6 +27,9 @@ export const List = ({ list, users }: IListProps) => {
         {
           title: '姓名',
           dataIndex: 'name',
+          sorter(a, b) {
+            return a.name.localeCompare(b.name)
+          },
         },
         {
           title: '负责人',
