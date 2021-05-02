@@ -1,10 +1,11 @@
 import { ProjectListScreen } from './screens/project-list/index'
 import { useAuth } from 'context/auth-context'
+import { Button } from 'antd'
 const AuthenticatedScreen = () => {
   const { logout } = useAuth()
   return (
     <div>
-      <button onClick={logout}>登出</button>
+      <Button onClick={logout}>登出</Button>
       <ProjectListScreen />
     </div>
   )

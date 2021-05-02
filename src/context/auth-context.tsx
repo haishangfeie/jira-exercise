@@ -54,7 +54,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
 export const useAuth: () => IAuthCnotext = () => {
   const context = React.useContext(AuthContext)
-  console.log(`现在的context是`, context)
   if (!context) {
     throw new Error('useAuth必须在 AuthProvider 中使用')
   }

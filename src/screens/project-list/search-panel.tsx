@@ -1,5 +1,6 @@
 import React from 'react'
 import { IUser } from './list'
+import { Input, Select } from 'antd'
 
 interface ISearchPanelProp {
   users: IUser[]
@@ -12,35 +13,33 @@ interface ISearchPanelProp {
 
 export const SearchPanel = ({ users, param, setParam }: ISearchPanelProp) => {
   return (
-    <form>
-      <div>
-        <input
-          type="text"
-          value={param.name}
-          onInput={(e) => {
-            setParam({
-              ...param,
-              name: (e.target as HTMLInputElement).value,
-            })
-          }}
-        />
-        <select
-          name={param.personId}
-          onChange={(e) => {
-            setParam({
-              ...param,
-              personId: e.target.value,
-            })
-          }}
-        >
-          <option value="">负责人</option>
-          {users.map((item) => (
-            <option key={item.id} value={item.id}>
-              {item.name}
-            </option>
-          ))}
-        </select>
-      </div>
-    </form>
+    <div>
+      <Input
+        type="text"
+        value={param.name}
+        onInput={(e) => {
+          setParam({
+            ...param,
+            name: (e.target as HTMLInputElement).value,
+          })
+        }}
+      />
+      <Select
+        defaultValue=""
+        onChange={(value) => {
+          setParam({
+            ...param,
+            personId: value,
+          })
+        }}
+      >
+        <Select.Option value="">负责人</Select.Option>
+        {users.map((item) => (
+          <Select.Option key={item.id} value={item.id}>
+            {item.name}
+          </Select.Option>
+        ))}
+      </Select>
+    </div>
   )
 }

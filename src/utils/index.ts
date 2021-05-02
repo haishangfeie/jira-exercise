@@ -18,6 +18,8 @@ export const cleanObject = (obj: TObj) => {
 }
 
 export const useMount = (callback: () => void) => {
+  // 这里就是需要只执行一次，所以不传入依赖
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(callback, [])
 }
 

@@ -1,3 +1,4 @@
+import { Table } from 'antd'
 import React from 'react'
 
 interface IProject {
@@ -21,23 +22,21 @@ interface IListProps {
 
 export const List = ({ list, users }: IListProps) => {
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>姓名</th>
-          <th>负责人</th>
-        </tr>
-      </thead>
-      <tbody>
-        {list.map((item) => (
-          <tr key={item.id}>
-            <td>{item.name}</td>
-            <td>
-              {users.find((user) => user.id === item.personId)?.name || ''}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <Table
+      columns={[
+        {
+          title: '姓名',
+          dataIndex: 'name',
+        },
+        {
+          title: '负责人',
+          render(value, row) {
+            return users.find((user) => user.id === row.personId)?.name || ''
+          },
+        },
+      ]}
+      dataSource={list}
+      rowKey="id"
+    />
   )
 }
