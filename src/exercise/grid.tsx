@@ -17,6 +17,7 @@ const Container = styled.div`
   grid-template-rows: 6rem 1fr 6rem;
   grid-template-columns: 20rem 1fr 20rem;
   grid-template-areas: 'header header header' 'nav main aside' 'footer footer footer';
+  grid-gap: 10px;
   height: 100vh;
 `
 
