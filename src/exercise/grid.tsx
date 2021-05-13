@@ -23,24 +23,28 @@ const Container = styled.div`
 const Header = styled.header`
   grid-area: header;
   background-color: #ccc;
-  color: #fff;
+  color: #333;
 `
 const Nav = styled.nav`
   grid-area: nav;
   background-color: blue;
+  color: #fff;
 `
 
 const Main = styled.main`
   grid-area: main;
   background-color: green;
+  color: #fff;
 `
 
 const Aside = styled.aside`
   grid-area: aside;
   background-color: yellow;
+  color: #333;
 `
 
 const Footer = styled.footer`
   grid-area: footer;
   background-color: pink;
+  color: #333;
 `
