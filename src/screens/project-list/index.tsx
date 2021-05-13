@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { List } from './list'
 import { SearchPanel } from './search-panel'
 import { useMount, useDebounce } from 'utils/index'

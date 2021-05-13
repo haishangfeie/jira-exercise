@@ -1,4 +1,3 @@
-import React from 'react'
 import { IUser } from './list'
 import { Input, Select } from 'antd'
 

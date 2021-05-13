@@ -1,6 +1,4 @@
 import { Table } from 'antd'
-import React from 'react'
-
 interface IProject {
   id: number
   name: string

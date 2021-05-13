@@ -1,4 +1,3 @@
-import React from 'react'
 import './App.css'
 import AuthenticatedScreen from './authenticated-app'
 import UnauthenticatedScreen from './unauthenticated-app/index'
