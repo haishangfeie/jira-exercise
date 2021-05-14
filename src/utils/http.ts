@@ -1,6 +1,6 @@
 import qs from 'qs'
-import { cleanObject } from 'utils/index'
-import * as auth from 'auth-provider'
+import { cleanObject } from 'src/utils/index'
+import * as auth from 'src/auth-provider'
 
 const apiUrl = process.env.REACT_APP_API_URL
 

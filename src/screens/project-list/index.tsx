@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { List } from './list'
 import { SearchPanel } from './search-panel'
-import { useMount, useDebounce } from 'utils/index'
-import { client } from 'utils/http'
+import { useMount, useDebounce } from 'src/utils/index'
+import { client } from 'src/utils/http'
 
 export const ProjectListScreen = () => {
   const [users, setUsers] = useState([])

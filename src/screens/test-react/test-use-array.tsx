@@ -1,5 +1,5 @@
 import React from 'react'
-import { useArray, useMount } from 'utils/index'
+import { useArray, useMount } from 'src/utils/index'
 
 const TestUseArray = () => {
   const persons: { name: string; age: number }[] = [

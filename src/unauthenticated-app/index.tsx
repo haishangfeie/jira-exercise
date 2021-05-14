@@ -3,9 +3,9 @@ import { useState } from 'react'
 import LoginScreen from './login'
 import RegisterScreen from './register'
 import styled from '@emotion/styled'
-import logoImg from 'assets/logo.svg'
-import leftImg from 'assets/left.svg'
-import rightImg from 'assets/right.svg'
+import logoImg from 'src/assets/logo.svg'
+import leftImg from 'src/assets/left.svg'
+import rightImg from 'src/assets/right.svg'
 
 const UnauthenticatedScreen = () => {
   const [isRegister, setIsRegister] = useState(false)

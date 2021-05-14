@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import * as auth from 'auth-provider'
-import { IUser } from 'screens/project-list/list'
-import { useMount } from 'utils'
-import http from 'utils/http'
+import * as auth from 'src/auth-provider'
+import { IUser } from 'src/screens/project-list/list'
+import { useMount } from 'src/utils'
+import http from 'src/utils/http'
 
 interface IAuthForm {
   username: string

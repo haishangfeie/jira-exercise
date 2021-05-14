@@ -1,7 +1,7 @@
 import './App.css'
 import AuthenticatedScreen from './authenticated-app'
 import UnauthenticatedScreen from './unauthenticated-app/index'
-import { useAuth } from 'context/auth-context'
+import { useAuth } from 'src/context/auth-context'
 // import { GridComponent } from 'exercise/grid'
 
 function App() {
