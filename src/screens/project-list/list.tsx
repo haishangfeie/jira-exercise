@@ -1,4 +1,5 @@
 import { Table } from 'antd'
+import dayjs from 'dayjs'
 interface IProject {
   id: number
   name: string
@@ -29,10 +30,23 @@ export const List = ({ list, users }: IListProps) => {
             return a.name.localeCompare(b.name)
           },
         },
+        //
+        {
+          title: '部门',
+          dataIndex: 'organization',
+        },
         {
           title: '负责人',
           render(value, row) {
             return users.find((user) => user.id === row.personId)?.name || ''
+          },
+        },
+        {
+          title: '创建日期',
+          dataIndex: 'created',
+          render(value, row) {
+            console.log(value)
+            return value ? dayjs(value).format('YYYY-MM-DD') : '无'
           },
         },
       ]}
