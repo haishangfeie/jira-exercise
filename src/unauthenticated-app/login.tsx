@@ -18,13 +18,13 @@ const LoginScreen = () => {
         name="username"
         rules={[{ required: true, message: '请输入用户名' }]}
       >
-        <Input placeholder="用户名" type="text" />
+        <Input placeholder="用户名" type="text" autoComplete="on" />
       </Form.Item>
       <Form.Item
         name="password"
         rules={[{ required: true, message: '请输入密码' }]}
       >
-        <Input placeholder="密码" type="password" />
+        <Input placeholder="密码" type="password" autoComplete="on" />
       </Form.Item>
       <Form.Item>
         <LongButton htmlType="submit" type="primary">

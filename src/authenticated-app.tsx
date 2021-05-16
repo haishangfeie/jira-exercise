@@ -25,7 +25,8 @@ const AuthenticatedScreen = () => {
           }
         >
           {/* 防止点击导致刷新 */}
-          <a onClick={(e) => e.preventDefault()}>Hi，{user?.name}</a>
+          {/* <a onClick={(e) => e.preventDefault()}>Hi，{user?.name}</a> */}
+          <Button type="link">Hi，{user?.name}</Button>
         </Dropdown>
       </Header>
       <ProjectListScreen />
