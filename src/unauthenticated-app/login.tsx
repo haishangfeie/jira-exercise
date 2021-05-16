@@ -8,14 +8,9 @@ const LoginScreen = () => {
     if (!values.username || !values.password) {
       return
     }
-    authContext
-      .login(values)
-      .then(() => {
-        console.log('登录成功')
-      })
-      .catch(() => {
-        console.log('登录失败')
-      })
+    authContext.login(values).catch(() => {
+      console.log('登录失败')
+    })
   }
   return (
     <Form onFinish={onsubmit}>

@@ -45,7 +45,6 @@ export const List = ({ list, users }: IListProps) => {
           title: '创建日期',
           dataIndex: 'created',
           render(value, row) {
-            console.log(value)
             return value ? dayjs(value).format('YYYY-MM-DD') : '无'
           },
         },

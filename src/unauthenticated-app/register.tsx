@@ -9,14 +9,9 @@ const RegisterScreen = () => {
     if (!values.username || !values.password) {
       return
     }
-    authContext
-      .register(values)
-      .then(() => {
-        console.log('注册成功')
-      })
-      .catch(() => {
-        console.log('注册失败')
-      })
+    authContext.register(values).catch(() => {
+      console.log('注册失败')
+    })
   }
   return (
     <Form onFinish={onsubmit}>
