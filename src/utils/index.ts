@@ -4,13 +4,18 @@ export const isTurthy = (val: unknown) => {
   return val === 0 || !!val
 }
 
-type TObj = {
-  [key: string]: any
+export const isVoid = (value: unknown) => {
+  return value === undefined || value === null || value === ''
 }
+
+type TObj = {
+  [key: string]: unknown
+}
+
 export const cleanObject = (obj: TObj) => {
   const newObj = { ...obj }
   Object.keys(newObj).forEach((key) => {
-    if (!isTurthy(newObj[key])) {
+    if (isVoid(newObj[key])) {
       delete newObj[key]
     }
   })

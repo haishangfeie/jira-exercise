@@ -6,7 +6,7 @@ const apiUrl = process.env.REACT_APP_API_URL
 
 interface IConfig extends RequestInit {
   token?: string
-  data?: object
+  data?: { [key: string]: unknown }
 }
 
 export default function http(
